@@ -203,6 +203,12 @@ footer{border-top:1px solid var(--line);background:#030304;padding:70px 0 30px}
 .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.82rem;color:var(--mute)}
 .linkbtn{background:none;border:none;text-decoration:underline;cursor:pointer;color:inherit}
 
+/* botão de som do vídeo */
+.som{position:absolute;z-index:3;top:96px;right:24px;display:inline-flex;align-items:center;gap:10px;padding:10px 16px;min-height:44px;border:1px solid var(--line);background:rgba(5,5,6,.6);backdrop-filter:blur(8px);color:var(--text);font:600 .85rem var(--body);cursor:pointer;transition:border-color .25s,color .25s}
+.som:hover,.som:focus-visible{border-color:var(--gold);color:var(--gold)}
+.som .on{display:none}.som[aria-pressed="true"] .on{display:inline}.som[aria-pressed="true"] .off{display:none}
+.som[hidden]{display:none}
+@media (max-width:700px){.som{top:84px;right:16px}}
 /* parallax */
 [data-parallax]{translate:0 var(--py,0px);will-change:translate}
 section{position:relative;overflow-x:clip}
@@ -273,6 +279,7 @@ section>.wrap{position:relative;z-index:1}
 <main id="inicio">
   <section class="hero" aria-label="Apresentação">
     <div class="hero-car" id="heroCar" data-parallax="0.18"><img src="img/rampage-frente.jpg" alt="" onerror="this.style.display='none'"></div>
+    <button type="button" class="som" id="somBtn" aria-pressed="false" aria-label="Ativar o som do vídeo" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><g class="on"><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></g><g class="off"><path d="m16 9 6 6M22 9l-6 6"/></g></svg><span>Ativar som</span></button>
     <div class="wrap" data-parallax="-0.08">
       <div class="hero-line"></div>
       <h1>Exclusividade em cada detalhe. Excelência em cada conquista.</h1>
@@ -493,7 +500,19 @@ const CARROS = [
   { id:"hilux", marca:"Toyota", modelo:"Hilux", versao:null, ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Picape", preco:null, status:"disponivel", troca:true, financia:true, fotos:["hilux-1"], destaques:[] },
   { id:"argo", marca:"Fiat", modelo:"Argo", versao:"Trekking", ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Hatch", preco:null, status:"disponivel", troca:true, financia:true, fotos:["argo-1","argo-2","argo-3","argo-4","argo-5","argo-6"], destaques:[] },
   { id:"hb20", marca:"Hyundai", modelo:"HB20", versao:null, ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Hatch", preco:null, status:"disponivel", troca:true, financia:true, fotos:["hb20-1","hb20-2","hb20-3","hb20-4","hb20-5"], destaques:[] },
-  { id:"fox", marca:"Volkswagen", modelo:"Fox", versao:"Trend", ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Hatch", preco:null, status:"disponivel", troca:true, financia:true, fotos:["fox-1","fox-2"], destaques:[] }
+  { id:"fox", marca:"Volkswagen", modelo:"Fox", versao:"Trend", ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Hatch", preco:null, status:"disponivel", troca:true, financia:true, fotos:["fox-1","fox-2"], destaques:[] },
+  { id:"golf", marca:"Volkswagen", modelo:"Golf", versao:"Sportline", ano:null, km:null, motor:null, combustivel:null, cambio:"Manual", tracao:null, tipo:"Hatch", preco:null, status:"disponivel", troca:true, financia:true,
+    fotos:["golf-1","golf-2","golf-3","golf-4","golf-5"],
+    destaques:["Teto solar","Rodas de liga leve","Bancos em couro","Engate"] },
+  { id:"tiguan", marca:"Volkswagen", modelo:"Tiguan Allspace", versao:"R-Line", ano:null, km:null, motor:"TSI", combustivel:null, cambio:null, tracao:null, tipo:"SUV", preco:null, status:"disponivel", troca:true, financia:true,
+    fotos:["tiguan-1","tiguan-2","tiguan-3","tiguan-4","tiguan-5","tiguan-6"],
+    destaques:["Teto solar panorâmico","Bancos em couro com detalhes R-Line","Rodas de liga leve","Pinças de freio azuis"] },
+  { id:"s10", marca:"Chevrolet", modelo:"S10", versao:"Executive", ano:null, km:null, motor:null, combustivel:null, cambio:"Manual", tracao:"4x4", tipo:"Picape", preco:null, status:"disponivel", troca:true, financia:true,
+    fotos:["s10-1","s10-2","s10-3","s10-4","s10-5","s10-6"],
+    destaques:["Tração 4x4","Cabine dupla","Bancos em couro","Estribos laterais","Cobertura da caçamba","Engate"] },
+  { id:"strada", marca:"Fiat", modelo:"Strada", versao:"Endurance", ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Picape", preco:null, status:"disponivel", troca:true, financia:true,
+    fotos:["strada-1"],
+    destaques:["Cobertura da caçamba","Engate"] }
 ];
 
 /* ===== Utilitários ===== */
@@ -584,6 +603,7 @@ const VIDEO_ID = "EmqFK1dbORw";
   f.referrerPolicy = "strict-origin-when-cross-origin";
   f.src = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${VIDEO_ID}&playsinline=1&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&fs=0&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
   caixa.appendChild(f);
+  const som = $("#somBtn"); let comSom = false;
   let tocando = false, tentativas = 0;
   const falar = obj => { try{ f.contentWindow.postMessage(JSON.stringify(obj),"*"); }catch(e){} };
   const ouvir = () => falar({event:"listening", id:1, channel:"widget"});
@@ -597,7 +617,16 @@ const VIDEO_ID = "EmqFK1dbORw";
     if(typeof d === "string"){ try{ d = JSON.parse(d); }catch(_){ return; } }
     if(!d) return;
     const estado = d.event === "onStateChange" ? d.info : (d.info && d.info.playerState);
-    if(estado === 1 && !tocando){ tocando = true; caixa.classList.add("playing"); }
+    if(estado === 1 && !tocando){ tocando = true; caixa.classList.add("playing"); som.hidden = false; }
+  });
+  som.addEventListener("click",()=>{
+    comSom = !comSom;
+    falar({event:"command", func: comSom ? "unMute" : "mute", args:""});
+    if(comSom) falar({event:"command", func:"setVolume", args:[100]});
+    som.setAttribute("aria-pressed", comSom);
+    som.setAttribute("aria-label", comSom ? "Desativar o som do vídeo" : "Ativar o som do vídeo");
+    som.querySelector("span").textContent = comSom ? "Desativar som" : "Ativar som";
+    track && track("video_som", {ligado: comSom});
   });
   new IntersectionObserver(([en])=>{
     if(tocando) falar({event:"command", func: en.isIntersecting ? "playVideo" : "pauseVideo", args:""});
