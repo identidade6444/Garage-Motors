@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Garagem Motors | Seminovos em Morrinhos - GO</title>
+<meta name="description" content="Seminovos selecionados em Morrinhos (GO). Aceitamos troca e financiamos. Simule a parcela e fale com a Garagem Motors pelo WhatsApp.">
+<meta name="theme-color" content="#050506">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Garagem Motors | Seminovos em Morrinhos - GO">
+<meta property="og:description" content="Veja o estoque, simule o financiamento e fale com um consultor pelo WhatsApp.">
+<meta property="og:image" content="img/logo.png">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AutoDealer",
+  "name":"Garagem Motors",
+  "telephone":"+55 64 99247-0353",
+  "sameAs":["https://www.instagram.com/motorsgarage/"],
+  "address":{"@type":"PostalAddress","streetAddress":"Av. Cel. Fernando Barbosa, 2240 - Jardim Santa Terezinha","addressLocality":"Morrinhos","addressRegion":"GO","postalCode":"75650-000","addressCountry":"BR"}
+}
+</script>
+<style>
+:root{
+  --bg:#050506;
+  --panel:#0c0c0f;
+  --panel-2:#131317;
+  --line:rgba(255,255,255,.11);
+  --text:#eceef2;
+  --mute:#a0a5af;
+  --chrome:#d9dde4;
+  --gold:#d9a95b;
+  --gold-soft:rgba(217,169,91,.16);
+  --ok:#2fbf71;
+  --display:"Chakra Petch",system-ui,sans-serif;
+  --body:"Manrope",system-ui,sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{width:min(var(--wrap),100% - 40px);margin-inline:auto}
+section{padding:110px 0}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:.01em}
+h2{font-size:clamp(1.9rem,4vw,3rem);max-width:18ch}
+.lead{color:var(--mute);max-width:56ch;margin-top:16px}
+.sec-head{margin-bottom:48px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border:1px solid var(--line);background:transparent;color:var(--text);font-weight:600;font-size:.95rem;cursor:pointer;text-decoration:none;transition:background .25s,border-color .25s,color .25s,transform .25s;min-height:48px}
+.btn:hover{border-color:var(--chrome);transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(180deg,#f3f5f8,#b9bec7);color:#08080a;border-color:transparent}
+.btn-primary:hover{background:linear-gradient(180deg,#fff,#cdd2da);border-color:transparent}
+.btn-wa{background:var(--ok);border-color:transparent;color:#04130a}
+.btn-wa:hover{background:#3ad483;border-color:transparent}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* introdução */
+#intro{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center;transition:opacity 1s ease,visibility 1s;cursor:pointer}
+#intro.done{opacity:0;visibility:hidden;pointer-events:none}
+#intro::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 45% at 50% 62%,rgba(217,169,91,.18),transparent 70%);opacity:0;animation:glow 3s ease-out .4s forwards}
+.intro-logo{width:min(62vmin,460px);aspect-ratio:1;opacity:0;transform:scale(.55);filter:blur(14px);animation:logoIn 2.6s cubic-bezier(.16,.8,.24,1) .2s forwards;position:relative}
+.intro-logo::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);mix-blend-mode:overlay;transform:translateX(-120%);animation:sweep 1.6s ease-in-out 1.6s forwards;pointer-events:none}
+@keyframes logoIn{to{opacity:1;transform:scale(1);filter:blur(0)}}
+@keyframes glow{to{opacity:1}}
+@keyframes sweep{to{transform:translateX(120%)}}
+.logo-img{width:100%;height:100%;object-fit:contain}
+.logo-fallback{display:none;width:100%;height:100%;place-items:center;text-align:center;font-family:var(--display);font-weight:700;line-height:1;letter-spacing:.06em;background:linear-gradient(180deg,#fff,#8f959f);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:clamp(1.4rem,6vmin,3.4rem)}
+.logo-fallback small{display:block;font-size:.4em;letter-spacing:.5em;margin-top:.5em;-webkit-text-fill-color:#fff}
+.noimg .logo-img{display:none}
+.noimg .logo-fallback{display:grid}
+
+/* cabeçalho */
+header.top{position:fixed;inset:0 0 auto 0;z-index:50;padding:14px 0;transition:background .35s,backdrop-filter .35s,border-color .35s;border-bottom:1px solid transparent}
+header.top.solid{background:rgba(5,5,6,.82);backdrop-filter:blur(14px);border-color:var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;opacity:0;transition:opacity .8s ease .2s}
+body.ready .brand{opacity:1}
+.brand .logo-box{width:46px;height:46px}
+.brand span{font-family:var(--display);font-weight:600;letter-spacing:.14em;font-size:.95rem}
+nav.menu{display:flex;align-items:center;gap:28px}
+nav.menu a{text-decoration:none;font-size:.92rem;color:var(--mute);transition:color .2s}
+nav.menu a:hover{color:var(--text)}
+nav.menu .btn{padding:10px 18px;min-height:40px;color:var(--text)}
+.burger{display:none;background:none;border:1px solid var(--line);width:46px;height:46px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--text);margin:5px auto}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:140px 0 70px;overflow:hidden;isolation:isolate}
+.hero-car{position:absolute;inset:-16% 0;z-index:-2;container-type:size;background:radial-gradient(70% 60% at 65% 55%,#25252c,#050506 70%)}
+.hero-video{position:absolute;top:50%;left:50%;width:max(100cqw,177.78cqh);height:max(100cqh,56.25cqw);translate:-50% -50%;scale:1.12;border:0;pointer-events:none;opacity:0;filter:brightness(.72) saturate(1.05);transition:opacity 1.8s ease}
+.hero-car.playing .hero-video{opacity:1}
+.hero-car img{width:100%;height:100%;object-fit:cover;object-position:center 60%;filter:brightness(0) contrast(1.1);animation:reveal 4.6s ease-out .6s forwards;will-change:transform}
+@keyframes reveal{to{filter:brightness(.62) contrast(1.08)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,5,6,.55) 0%,rgba(5,5,6,.1) 35%,rgba(5,5,6,.92) 100%),linear-gradient(90deg,rgba(5,5,6,.85),transparent 65%)}
+.hero h1{font-size:clamp(2.2rem,6.2vw,5rem);font-weight:700;text-transform:uppercase;max-width:15ch;background:linear-gradient(180deg,#fff 30%,#9ea4ae);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin-top:22px;max-width:46ch;color:#c7cbd3;font-size:1.08rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hero-line{width:72px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:28px;box-shadow:0 0 18px var(--gold)}
+
+/* estoque */
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:38px;padding:20px;border:1px solid var(--line);background:var(--panel)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.82rem;color:var(--mute)}
+.field input,.field select,.field textarea{background:var(--panel-2);border:1px solid var(--line);padding:12px 14px;min-height:48px;border-radius:0;width:100%;appearance:none;-webkit-appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--mute) 50%),linear-gradient(135deg,var(--mute) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
+.field input:focus,.field select:focus{border-color:var(--gold);outline:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .3s;cursor:pointer;text-align:left;padding:0;color:inherit}
+.card:hover{border-color:rgba(217,169,91,.6);transform:translateY(-3px)}
+.card.vendido{cursor:default}
+.card.vendido .ph img{filter:grayscale(1) brightness(.5)}
+.ph{position:relative;aspect-ratio:4/3;background:radial-gradient(80% 80% at 50% 50%,#202026,#0a0a0c);overflow:hidden;display:grid;place-items:center}
+.ph img{width:100%;height:100%;object-fit:cover;scale:1.14;transition:scale .7s ease}
+.card:hover .ph img{scale:1.2}
+.ph .ph-name{display:none;font-family:var(--display);color:var(--mute);font-size:1.1rem;padding:20px;text-align:center}
+.ph.nophoto img{display:none}
+.ph.nophoto .ph-name{display:block}
+.tags{position:absolute;left:12px;top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:.74rem;font-weight:600;padding:4px 10px;background:rgba(5,5,6,.78);border:1px solid var(--line);backdrop-filter:blur(6px)}
+.tag.gold{border-color:var(--gold);color:var(--gold)}
+.tag.sold{background:#8c1d1d;border-color:#8c1d1d;color:#fff}
+.card-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card-body h3{font-size:1.35rem}
+.card-body .ver{color:var(--mute);font-size:.92rem;min-height:1.4em}
+.specs{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.88rem;color:var(--mute);margin-top:6px;min-height:1.4em}
+.price{margin-top:auto;padding-top:14px;font-family:var(--display);font-size:1.55rem;font-weight:600;color:var(--chrome)}
+.price.consulte{font-size:1.1rem;color:var(--gold)}
+.empty{grid-column:1/-1;padding:50px 20px;text-align:center;color:var(--mute);border:1px dashed var(--line)}
+
+/* modal */
+dialog{margin:auto;border:1px solid var(--line);background:var(--panel);color:var(--text);width:min(980px,calc(100% - 24px));max-height:calc(100svh - 24px);overflow:auto;padding:0}
+dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(4px)}
+.dlg-close{position:sticky;top:0;float:right;z-index:3;margin:10px;width:44px;height:44px;border:1px solid var(--line);background:rgba(5,5,6,.85);cursor:pointer;font-size:1.3rem;line-height:1}
+.dlg-grid{display:grid;grid-template-columns:1.15fr 1fr}
+.gal-main{aspect-ratio:4/3;background:#0a0a0c;display:grid;place-items:center;position:relative}
+.gal-main img{width:100%;height:100%;object-fit:cover}
+.gal-main.nophoto img{display:none}
+.gal-main .ph-name{display:none;font-family:var(--display);color:var(--mute)}
+.gal-main.nophoto .ph-name{display:block}
+.thumbs{display:flex;gap:8px;padding:10px;overflow-x:auto}
+.thumbs button{flex:none;width:76px;height:56px;border:1px solid var(--line);background:#0a0a0c;padding:0;cursor:pointer;opacity:.6}
+.thumbs button[aria-current="true"]{opacity:1;border-color:var(--gold)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.dlg-info{padding:34px 30px 30px}
+.dlg-info h3{font-size:1.8rem}
+.dlg-info dl{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;margin:20px 0;font-size:.95rem}
+.dlg-info dt{color:var(--mute)}
+.dlg-info ul{margin:0 0 20px 18px;color:#cfd3da;font-size:.93rem}
+.dlg-price{font-family:var(--display);font-size:2rem;color:var(--chrome);margin-bottom:18px}
+.dlg-actions{display:grid;gap:10px}
+
+/* simulador */
+.sim{background:linear-gradient(180deg,var(--bg),#0a0a0d 40%,var(--bg))}
+.sim-box{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--panel)}
+.sim-form{padding:34px;display:grid;gap:18px;align-content:start}
+.sim-out{padding:34px;background:linear-gradient(160deg,#17171c,#0b0b0e);border-left:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rate-line{display:flex;justify-content:space-between;font-size:.82rem;color:var(--mute)}
+.field input[type=range]{appearance:auto;-webkit-appearance:auto;padding:0;min-height:30px;height:30px;accent-color:var(--gold);background:none;border:none}
+.big{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1;color:#fff;font-weight:600}
+.out-label{font-size:.85rem;color:var(--mute)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:8px 16px;font-size:.93rem;padding-top:14px;border-top:1px solid var(--line)}
+.kv dt{color:var(--mute)}
+.kv dd{text-align:right;font-weight:600}
+.ptable{width:100%;border-collapse:collapse;font-size:.88rem}
+.ptable td{padding:6px 0;border-bottom:1px solid var(--line)}
+.ptable td:last-child{text-align:right;font-weight:600}
+.ptable tr.on td{color:var(--gold)}
+.note{font-size:.8rem;color:var(--mute);line-height:1.5}
+.msg-err{color:#ff8d8d;font-size:.9rem}
+
+/* troca, pagamento, sobre */
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.form{display:grid;gap:16px;padding:32px;border:1px solid var(--line);background:var(--panel)}
+.pay{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.pay div{background:var(--panel);padding:28px 24px}
+.pay h3{font-size:1.1rem;margin-bottom:6px}
+.pay p{color:var(--mute);font-size:.9rem}
+.about p{color:#c9cdd5;max-width:58ch;margin-top:16px}
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{padding:20px 0;border-bottom:1px solid var(--line)}
+.facts strong{font-family:var(--display);font-size:1.15rem;display:block}
+.facts span{color:var(--mute);font-size:.93rem}
+
+/* rodapé */
+footer{border-top:1px solid var(--line);background:#030304;padding:70px 0 30px}
+.foot{display:grid;grid-template-columns:1.1fr 1fr 1.2fr;gap:44px}
+.foot .logo-box{width:120px;height:120px;margin-bottom:14px}
+.foot h4{font-family:var(--display);font-size:1rem;margin-bottom:12px}
+.foot p,.foot li{color:var(--mute);font-size:.93rem;list-style:none}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--gold)}
+.map{width:100%;height:230px;border:1px solid var(--line);filter:grayscale(1) invert(.92) contrast(.9)}
+.legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.82rem;color:var(--mute)}
+.linkbtn{background:none;border:none;text-decoration:underline;cursor:pointer;color:inherit}
+
+/* parallax */
+[data-parallax]{translate:0 var(--py,0px);will-change:translate}
+section{position:relative;overflow-x:clip}
+section>.wrap{position:relative;z-index:1}
+.orb,.ring{position:absolute;z-index:0;pointer-events:none;border-radius:50%}
+.orb{width:560px;height:560px;background:radial-gradient(closest-side,rgba(217,169,91,.15),transparent)}
+.ring{width:520px;height:520px;border:2px solid rgba(217,221,228,.07);box-shadow:inset 0 0 70px rgba(255,255,255,.025),0 0 50px rgba(217,169,91,.04)}
+@media (prefers-reduced-motion:reduce){[data-parallax]{translate:none}}
+
+/* flutuantes */
+.float{position:fixed;right:18px;bottom:18px;z-index:60;display:grid;gap:12px;justify-items:end}
+.fab{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--ok);color:#04130a;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .25s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:28px;height:28px}
+.fab.ig{width:44px;height:44px;background:rgba(19,19,23,.92);color:var(--text);border:1px solid var(--line)}
+.fab.ig svg{width:20px;height:20px}
+
+@media (max-width:900px){
+  section{padding:80px 0}
+  nav.menu{position:fixed;inset:74px 0 auto 0;background:rgba(5,5,6,.97);flex-direction:column;align-items:stretch;gap:0;padding:10px 20px 24px;border-bottom:1px solid var(--line);display:none}
+  nav.menu.open{display:flex}
+  nav.menu a{padding:14px 0;border-bottom:1px solid var(--line)}
+  nav.menu .btn{margin-top:14px}
+  .burger{display:block}
+  .dlg-grid,.sim-box,.split,.foot{grid-template-columns:1fr}
+  .sim-out{border-left:none;border-top:1px solid var(--line)}
+  .split{gap:36px}
+  .brand span{display:none}
+}
+@media (max-width:520px){
+  .row2{grid-template-columns:1fr}
+  .sim-form,.sim-out,.form{padding:22px}
+  .hero-cta .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="intro" role="presentation" aria-hidden="true">
+  <div class="intro-logo">
+    <img class="logo-img" src="img/logo.png" alt="">
+    <div class="logo-fallback">GARAGE<small>MOTORS</small></div>
+  </div>
+</div>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#inicio" aria-label="Garagem Motors, início">
+      <span class="logo-box"><img class="logo-img" src="img/logo.png" alt=""><span class="logo-fallback" style="font-size:.7rem">GM</span></span>
+      <span>GARAGEM MOTORS</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#estoque">Estoque</a>
+      <a href="#financiamento">Financiamento</a>
+      <a href="#troca">Troca</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#visita">Visita</a>
+      <a class="btn" data-wa="Olá! Vim pelo site da Garagem Motors e gostaria de falar com um consultor.">Fale conosco</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-label="Apresentação">
+    <div class="hero-car" id="heroCar" data-parallax="0.18"><img src="img/rampage-frente.jpg" alt="" onerror="this.style.display='none'"></div>
+    <div class="wrap" data-parallax="-0.08">
+      <div class="hero-line"></div>
+      <h1>Exclusividade em cada detalhe. Excelência em cada conquista.</h1>
+      <p>Seminovos selecionados em Morrinhos, GO. Aceitamos o seu carro na troca e financiamos a compra.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#estoque">Conheça nosso estoque</a>
+        <a class="btn" href="#filtros">Encontre seu próximo carro</a>
+        <a class="btn" data-wa="Olá! Vim pelo site da Garagem Motors e gostaria de falar com um consultor.">Fale com um consultor</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="estoque" aria-labelledby="t-estoque">
+    <div class="orb" data-parallax="0.14" style="left:-240px;top:6%"></div>
+    <div class="wrap">
+      <div class="sec-head" data-parallax="0.05" data-max="40">
+        <h2 id="t-estoque">Estoque disponível</h2>
+        <p class="lead">Toque em um veículo para ver as fotos, os dados e as condições. Todos os carros aceitam avaliação de troca.</p>
+      </div>
+      <form class="filters" id="filtros" onsubmit="return false" aria-label="Filtros do estoque">
+        <div class="field"><label for="fMarca">Marca</label><select id="fMarca"><option value="">Todas</option></select></div>
+        <div class="field"><label for="fTipo">Tipo</label><select id="fTipo"><option value="">Todos</option></select></div>
+        <div class="field"><label for="fPreco">Faixa de preço</label>
+          <select id="fPreco">
+            <option value="">Todas</option>
+            <option value="0-80000">Até R$ 80.000</option>
+            <option value="80000-150000">R$ 80.000 a R$ 150.000</option>
+            <option value="150000-9999999">Acima de R$ 150.000</option>
+          </select></div>
+        <div class="field"><label for="fOrdem">Ordenar por</label>
+          <select id="fOrdem"><option value="">Destaques</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option></select></div>
+      </form>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="financiamento" class="sim" aria-labelledby="t-sim">
+    <div class="orb" data-parallax="-0.12" style="right:-200px;top:4%"></div>
+    <div class="ring" data-parallax="0.1" style="left:-260px;bottom:-140px"></div>
+    <div class="wrap">
+      <div class="sec-head" data-parallax="0.05" data-max="40">
+        <h2 id="t-sim">Seu próximo carro está mais perto do que você imagina.</h2>
+        <p class="lead">Simule a parcela na hora. O cálculo usa a tabela Price com juros entre 1,6% e 2,2% ao mês e você envia o resultado direto para a nossa equipe.</p>
+      </div>
+      <div class="sim-box">
+        <form class="sim-form" id="simForm" onsubmit="return false" aria-label="Simulador de financiamento">
+          <div class="field"><label for="sCarro">Veículo</label><select id="sCarro"></select></div>
+          <div class="row2">
+            <div class="field"><label for="sValor">Valor do veículo (R$)</label><input id="sValor" inputmode="numeric" autocomplete="off" placeholder="Ex.: 90.000"></div>
+            <div class="field"><label for="sEntrada">Valor de entrada (R$)</label><input id="sEntrada" inputmode="numeric" autocomplete="off" placeholder="Ex.: 30.000"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="sPrazo">Prazo</label>
+              <select id="sPrazo"><option value="12">12 meses</option><option value="24">24 meses</option><option value="36">36 meses</option><option value="48" selected>48 meses</option><option value="60">60 meses</option></select></div>
+            <div class="field"><label for="sTaxa">Taxa de juros: <strong id="sTaxaTxt">1,90% ao mês</strong></label>
+              <input id="sTaxa" type="range" min="1.6" max="2.2" step="0.01" value="1.9" aria-describedby="taxaNote">
+              <div class="rate-line"><span>1,6%</span><span>2,2%</span></div></div>
+          </div>
+          <p class="note" id="taxaNote">Taxa de exemplo dentro da faixa praticada. A taxa final é definida pela instituição financeira após a análise de crédito.</p>
+        </form>
+        <div class="sim-out" aria-live="polite">
+          <div>
+            <div class="out-label">Parcela estimada</div>
+            <div class="big" id="oParcela">R$ 0,00</div>
+            <div class="out-label" id="oFaixa" style="margin-top:8px"></div>
+          </div>
+          <div class="msg-err" id="oErro" hidden></div>
+          <dl class="kv" id="oKv">
+            <dt>Valor a financiar</dt><dd id="oFin">R$ 0,00</dd>
+            <dt>Total estimado com a entrada</dt><dd id="oTotal">R$ 0,00</dd>
+          </dl>
+          <table class="ptable" id="oTab" aria-label="Parcelas por prazo"></table>
+          <button class="btn btn-wa" id="sEnviar" type="button">Solicitar proposta de financiamento</button>
+          <p class="note">Simulação sem valor de proposta e sem aprovação de crédito. Taxas, tarifas e condições finais dependem da instituição financeira.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="troca" aria-labelledby="t-troca">
+    <div class="ring" data-parallax="-0.1" style="right:-240px;top:-60px"></div>
+    <div class="wrap split">
+      <div>
+        <h2 id="t-troca">Seu carro atual pode ser o primeiro passo para o próximo.</h2>
+        <p class="lead">Conte como está o seu veículo e a nossa equipe faz a avaliação pelo WhatsApp. Depois de abrir a conversa, envie as fotos do carro por lá.</p>
+      </div>
+      <form class="form" id="trocaForm" aria-label="Avaliação de veículo na troca">
+        <div class="row2">
+          <div class="field"><label for="tMarca">Marca</label><input id="tMarca" required autocomplete="off"></div>
+          <div class="field"><label for="tModelo">Modelo</label><input id="tModelo" required autocomplete="off"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="tAno">Ano</label><input id="tAno" inputmode="numeric" maxlength="9" required autocomplete="off"></div>
+          <div class="field"><label for="tKm">Quilometragem</label><input id="tKm" inputmode="numeric" required autocomplete="off"></div>
+        </div>
+        <div class="field"><label for="tVersao">Versão</label><input id="tVersao" autocomplete="off"></div>
+        <div class="field"><label for="tNome">Seu nome</label><input id="tNome" required autocomplete="name"></div>
+        <button class="btn btn-wa" type="submit">Enviar para a equipe no WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="pagamento" aria-labelledby="t-pag" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head" data-parallax="0.05" data-max="40">
+        <h2 id="t-pag">Formas de pagamento</h2>
+        <p class="lead">Modalidades aceitas, sujeitas à confirmação com a equipe no atendimento.</p>
+      </div>
+      <div class="pay">
+        <div><h3>Pix</h3><p>Combinado direto com a equipe, sem dados bancários neste site.</p></div>
+        <div><h3>Transferência bancária</h3><p>Dados informados pelo atendimento no fechamento.</p></div>
+        <div><h3>Financiamento bancário</h3><p>Simule acima e solicite a proposta.</p></div>
+        <div><h3>À vista</h3><p>Condições especiais sob consulta.</p></div>
+        <div><h3>Carro na troca</h3><p>Analisamos o seu veículo como parte do pagamento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about" aria-labelledby="t-sobre">
+    <div class="orb" data-parallax="0.12" style="right:-180px;bottom:0"></div>
+    <div class="ring" data-parallax="-0.08" style="left:-300px;top:10%"></div>
+    <div class="wrap split">
+      <div>
+        <h2 id="t-sobre">Sobre a garagem</h2>
+        <p>A Garagem Motors vende veículos seminovos em Morrinhos, Goiás, em um showroom próprio onde você pode ver cada carro de perto, sem pressa.</p>
+        <p>Aceitamos o seu carro na troca e financiamos a compra. Você fala direto com a equipe pelo WhatsApp e confirma os detalhes do veículo antes de qualquer visita.</p>
+        <div style="margin-top:28px"><a class="btn" href="https://www.instagram.com/motorsgarage/" target="_blank" rel="noopener">Ver mais carros no Instagram</a></div>
+      </div>
+      <div class="facts">
+        <div data-parallax="0.02" data-max="30"><strong>Aceitamos troca</strong><span>Avaliação do seu carro pelo WhatsApp.</span></div>
+        <div data-parallax="0.05" data-max="30"><strong>Financiamos</strong><span>Simulação na hora e proposta com a equipe.</span></div>
+        <div data-parallax="0.08" data-max="30"><strong>Showroom em Morrinhos</strong><span>Venha conhecer o veículo pessoalmente.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visita" aria-labelledby="t-visita" style="padding-top:0">
+    <div class="wrap split">
+      <div>
+        <h2 id="t-visita">Agende uma visita</h2>
+        <p class="lead">Escolha o carro e o melhor horário. A equipe confirma pelo WhatsApp.</p>
+      </div>
+      <form class="form" id="visitaForm" aria-label="Agendamento de visita">
+        <div class="field"><label for="vCarro">Veículo</label><select id="vCarro"></select></div>
+        <div class="field"><label for="vNome">Seu nome</label><input id="vNome" required autocomplete="name"></div>
+        <div class="row2">
+          <div class="field"><label for="vDia">Dia</label><input id="vDia" type="date" required></div>
+          <div class="field"><label for="vHora">Horário</label><input id="vHora" type="time" required></div>
+        </div>
+        <button class="btn btn-wa" type="submit">Solicitar horário no WhatsApp</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo-box" data-parallax="-0.04" data-max="30"><img class="logo-img" src="img/logo.png" alt="Garagem Motors"><div class="logo-fallback" style="font-size:1rem">GARAGE<small>MOTORS</small></div></div>
+        <p>Seminovos em Morrinhos, GO.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" data-wa="Olá! Vim pelo site da Garagem Motors.">WhatsApp (64) 99247-0353</a></li>
+          <li><a href="https://www.instagram.com/motorsgarage/" target="_blank" rel="noopener">Instagram @motorsgarage</a></li>
+          <li style="margin-top:12px">Av. Cel. Fernando Barbosa, 2240<br>Jardim Santa Terezinha<br>Morrinhos - GO, 75650-000</li>
+          <li style="margin-top:12px">Horário de funcionamento: consulte pelo WhatsApp.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Como chegar</h4>
+        <iframe class="map" title="Mapa da Garagem Motors" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Cel.+Fernando+Barbosa,+2240,+Morrinhos,+GO&output=embed"></iframe>
+        <p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&query=Av.+Cel.+Fernando+Barbosa,+2240,+Morrinhos,+GO" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="ano"></span> Garagem Motors. Imagens e valores sujeitos a alteração sem aviso.</span>
+      <button class="linkbtn" type="button" id="abrirPriv">Política de privacidade</button>
+    </div>
+  </div>
+</footer>
+
+<div class="float">
+  <a class="fab ig" href="https://www.instagram.com/motorsgarage/" target="_blank" rel="noopener" aria-label="Instagram da Garagem Motors">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+  </a>
+  <a class="fab" data-wa="Olá! Vim pelo site da Garagem Motors e gostaria de falar com um consultor." aria-label="Falar no WhatsApp" href="#">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+  </a>
+</div>
+
+<dialog id="dlgCarro" aria-labelledby="dlgTitulo"></dialog>
+
+<dialog id="dlgPriv" aria-labelledby="privTitulo">
+  <button class="dlg-close" type="button" data-close aria-label="Fechar">×</button>
+  <div style="padding:34px 30px">
+    <h3 id="privTitulo" style="margin-bottom:14px">Política de privacidade</h3>
+    <p class="note" style="font-size:.95rem">Os formulários deste site não guardam os seus dados. O que você preenche é usado apenas para montar a mensagem que abre no seu WhatsApp, e só é enviada quando você toca em enviar. A conversa passa a seguir as regras do WhatsApp. Nunca pedimos senhas, dados de cartão ou dados bancários por este site.</p>
+  </div>
+</dialog>
+
+<script>
+"use strict";
+/* ===== Configuração ===== */
+const WHATS = "5564992470353";
+const TAXA_MIN = 1.6, TAXA_MAX = 2.2;
+const GA_ID = ""; // Cole aqui o ID do Google Analytics (G-XXXXXXX) para medir visitas e cliques.
+
+/* ===== Estoque: edite aqui os carros, preços e disponibilidade =====
+   status: "disponivel" ou "vendido". preco: número, ou null para "Consulte".
+   fotos: nomes dos arquivos dentro da pasta img/ (sem a extensão .jpg). */
+const CARROS = [
+  { id:"rampage", marca:"RAM", modelo:"Rampage", versao:"Laramie", ano:"2024/2024", km:33000, motor:"2.0", combustivel:"Gasolina", cambio:"Automático", tracao:"4x4", tipo:"Picape", preco:168000, status:"disponivel", troca:true, financia:true,
+    fotos:["rampage-frente","rampage-traseira","rampage-painel","rampage-bancos"],
+    destaques:["Tração 4x4","Bancos em couro marrom","Central multimídia de tela grande","Painel de instrumentos digital","Estribos laterais e cobertura da caçamba","Engate"] },
+  { id:"hilux", marca:"Toyota", modelo:"Hilux", versao:null, ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Picape", preco:null, status:"disponivel", troca:true, financia:true, fotos:["hilux-1"], destaques:[] },
+  { id:"argo", marca:"Fiat", modelo:"Argo", versao:"Trekking", ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Hatch", preco:null, status:"disponivel", troca:true, financia:true, fotos:["argo-1","argo-2","argo-3","argo-4","argo-5","argo-6"], destaques:[] },
+  { id:"hb20", marca:"Hyundai", modelo:"HB20", versao:null, ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Hatch", preco:null, status:"disponivel", troca:true, financia:true, fotos:["hb20-1","hb20-2","hb20-3","hb20-4","hb20-5"], destaques:[] },
+  { id:"fox", marca:"Volkswagen", modelo:"Fox", versao:"Trend", ano:null, km:null, motor:null, combustivel:null, cambio:null, tracao:null, tipo:"Hatch", preco:null, status:"disponivel", troca:true, financia:true, fotos:["fox-1","fox-2"], destaques:[] }
+];
+
+/* ===== Utilitários ===== */
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const brl = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const km = n => n.toLocaleString("pt-BR") + " km";
+const digits = s => parseInt(String(s).replace(/\D/g,""),10) || 0;
+const nomeCarro = c => [c.marca,c.modelo,c.versao].filter(Boolean).join(" ");
+const waLink = txt => `https://wa.me/${WHATS}?text=${encodeURIComponent(txt)}`;
+const abrirWa = txt => { track("whatsapp_click"); window.open(waLink(txt),"_blank","noopener"); };
+function track(evento, dados){
+  try{ if(window.gtag) window.gtag("event", evento, dados||{}); }catch(e){}
+}
+function mascaraMoeda(input){
+  input.addEventListener("input",()=>{
+    const v = digits(input.value);
+    input.value = v ? v.toLocaleString("pt-BR") : "";
+  });
+}
+const img = nome => `img/${nome}.jpg`;
+
+/* ===== Analytics opcional ===== */
+if(GA_ID){
+  const s=document.createElement("script"); s.async=true; s.src=`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`; document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)}; gtag("js",new Date()); gtag("config",GA_ID);
+}
+
+/* ===== Logo com plano B ===== */
+$$(".logo-img").forEach(el=>{
+  const box = el.parentElement;
+  const falha = () => box.classList.add("noimg");
+  el.addEventListener("error", falha);
+  if(el.complete && el.naturalWidth===0) falha();
+});
+
+/* ===== Abertura ===== */
+(function intro(){
+  const el = $("#intro");
+  const fim = () => { el.classList.add("done"); document.body.classList.add("ready"); };
+  const reduzir = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let visto = false;
+  try{ visto = sessionStorage.getItem("gm-intro")==="1"; }catch(e){}
+  if(reduzir || visto){ el.style.display="none"; document.body.classList.add("ready"); return; }
+  try{ sessionStorage.setItem("gm-intro","1"); }catch(e){}
+  el.addEventListener("click", fim);
+  setTimeout(fim, 3600);
+})();
+
+/* ===== Cabeçalho, menu, parallax discreto ===== */
+const topo = $("#top");
+const REDUZ = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let ticking = false;
+/* Parallax: data-parallax positivo = anda mais devagar que a rolagem; negativo = mais rápido. */
+function atualizarParallax(){
+  ticking = false;
+  if(REDUZ) return;
+  const vh = innerHeight;
+  document.querySelectorAll("[data-parallax]").forEach(el=>{
+    const r = el.getBoundingClientRect();
+    if(r.bottom < -300 || r.top > vh + 300) return;
+    const natural = r.top + r.height/2 - (el._py || 0);
+    let py = -(natural - vh/2) * (parseFloat(el.dataset.parallax) || 0);
+    const max = parseFloat(el.dataset.max);
+    if(max) py = Math.max(-max, Math.min(max, py));
+    el._py = py;
+    el.style.setProperty("--py", py.toFixed(1) + "px");
+  });
+}
+addEventListener("scroll",()=>{
+  topo.classList.toggle("solid", scrollY>30);
+  if(!ticking){ ticking = true; requestAnimationFrame(atualizarParallax); }
+},{passive:true});
+addEventListener("resize", atualizarParallax);
+addEventListener("load", atualizarParallax);
+atualizarParallax();
+
+/* Vídeo de fundo do título: YouTube mudo e em loop. Só aparece quando começa a tocar; a foto da Rampage fica como reserva. */
+const VIDEO_ID = "EmqFK1dbORw";
+(function videoHero(){
+  const caixa = $("#heroCar");
+  const poucaBanda = navigator.connection && navigator.connection.saveData;
+  if(!caixa || REDUZ || poucaBanda) return;
+  const f = document.createElement("iframe");
+  f.className = "hero-video"; f.title = ""; f.tabIndex = -1;
+  f.setAttribute("aria-hidden","true");
+  f.allow = "autoplay; encrypted-media";
+  f.referrerPolicy = "strict-origin-when-cross-origin";
+  f.src = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${VIDEO_ID}&playsinline=1&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&fs=0&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
+  caixa.appendChild(f);
+  let tocando = false, tentativas = 0;
+  const falar = obj => { try{ f.contentWindow.postMessage(JSON.stringify(obj),"*"); }catch(e){} };
+  const ouvir = () => falar({event:"listening", id:1, channel:"widget"});
+  f.addEventListener("load",()=>{
+    ouvir();
+    const t = setInterval(()=>{ if(tocando || ++tentativas > 20) return clearInterval(t); ouvir(); }, 500);
+  });
+  addEventListener("message",e=>{
+    if(e.source !== f.contentWindow) return;
+    let d = e.data;
+    if(typeof d === "string"){ try{ d = JSON.parse(d); }catch(_){ return; } }
+    if(!d) return;
+    const estado = d.event === "onStateChange" ? d.info : (d.info && d.info.playerState);
+    if(estado === 1 && !tocando){ tocando = true; caixa.classList.add("playing"); }
+  });
+  new IntersectionObserver(([en])=>{
+    if(tocando) falar({event:"command", func: en.isIntersecting ? "playVideo" : "pauseVideo", args:""});
+  },{threshold:.05}).observe($(".hero"));
+})();
+
+$("#burger").addEventListener("click",e=>{
+  const aberto = $("#menu").classList.toggle("open");
+  e.currentTarget.setAttribute("aria-expanded", aberto);
+});
+$$("#menu a").forEach(a=>a.addEventListener("click",()=>{ $("#menu").classList.remove("open"); $("#burger").setAttribute("aria-expanded","false"); }));
+$("#ano").textContent = new Date().getFullYear();
+
+/* ===== Botões de WhatsApp com data-wa ===== */
+$$("[data-wa]").forEach(a=>{
+  a.setAttribute("href", waLink(a.dataset.wa));
+  a.setAttribute("target","_blank"); a.setAttribute("rel","noopener");
+  a.addEventListener("click",()=>track("whatsapp_click"));
+});
+
+/* ===== Estoque ===== */
+const fMarca=$("#fMarca"), fTipo=$("#fTipo"), fPreco=$("#fPreco"), fOrdem=$("#fOrdem");
+[...new Set(CARROS.map(c=>c.marca))].sort().forEach(m=>fMarca.add(new Option(m,m)));
+[...new Set(CARROS.map(c=>c.tipo))].sort().forEach(t=>fTipo.add(new Option(t,t)));
+
+function cardHTML(c){
+  const vendido = c.status==="vendido";
+  const specs = [c.ano, c.km!=null?km(c.km):null, c.motor?`Motor ${c.motor}`:null, c.cambio, c.combustivel].filter(Boolean);
+  const tags = [];
+  if(vendido) tags.push('<span class="tag sold">VENDIDO</span>');
+  else { if(c.troca) tags.push('<span class="tag gold">Aceita troca</span>'); if(c.financia) tags.push('<span class="tag">Financiamos</span>'); }
+  const preco = vendido ? '<div class="price consulte">Vendido</div>' : (c.preco ? `<div class="price">${brl(c.preco)}</div>` : '<div class="price consulte">Consulte o valor</div>');
+  return `<button class="card ${vendido?"vendido":""}" data-id="${c.id}" ${vendido?"aria-disabled='true'":""} aria-label="Ver detalhes de ${nomeCarro(c)}">
+    <div class="ph"><img src="${img(c.fotos[0])}" alt="${nomeCarro(c)}" loading="lazy" data-parallax="0.09" data-max="12"><span class="ph-name">${nomeCarro(c)}</span><div class="tags">${tags.join("")}</div></div>
+    <div class="card-body"><h3>${c.marca} ${c.modelo}</h3><div class="ver">${c.versao||""}</div>
+    <div class="specs">${specs.map(s=>`<span>${s}</span>`).join("")}</div>${preco}</div></button>`;
+}
+function renderEstoque(){
+  let lista = CARROS.filter(c=>(!fMarca.value||c.marca===fMarca.value)&&(!fTipo.value||c.tipo===fTipo.value));
+  if(fPreco.value){
+    const [a,b] = fPreco.value.split("-").map(Number);
+    lista = lista.filter(c=>c.preco!=null && c.preco>=a && c.preco<b);
+  }
+  if(fOrdem.value){
+    lista = [...lista].sort((x,y)=>{
+      const px = x.preco ?? (fOrdem.value==="menor"?Infinity:-Infinity);
+      const py = y.preco ?? (fOrdem.value==="menor"?Infinity:-Infinity);
+      return fOrdem.value==="menor" ? px-py : py-px;
+    });
+  }
+  const grid = $("#grid");
+  grid.innerHTML = lista.length ? lista.map(cardHTML).join("") : '<div class="empty">Nenhum veículo com esses filtros. Limpe os filtros ou chame a equipe no WhatsApp para encontrarmos o carro certo.</div>';
+  $$(".ph img",grid).forEach(im=>{
+    const marcar = () => im.parentElement.classList.add("nophoto");
+    im.addEventListener("error", marcar);
+    if(im.complete && im.naturalWidth===0) marcar();
+  });
+  atualizarParallax();
+}
+[fMarca,fTipo,fPreco,fOrdem].forEach(f=>f.addEventListener("change",renderEstoque));
+renderEstoque();
+
+/* ===== Detalhe do veículo ===== */
+const dlg = $("#dlgCarro");
+$("#grid").addEventListener("click",e=>{
+  const card = e.target.closest(".card"); if(!card) return;
+  const c = CARROS.find(x=>x.id===card.dataset.id);
+  if(c && c.status!=="vendido") abrirCarro(c);
+});
+function abrirCarro(c){
+  track("ver_veiculo",{veiculo:nomeCarro(c)});
+  const dados = [["Ano",c.ano],["Quilometragem",c.km!=null?km(c.km):null],["Motor",c.motor],["Câmbio",c.cambio],["Combustível",c.combustivel],["Tração",c.tracao],["Tipo",c.tipo]].filter(d=>d[1]);
+  const preco = c.preco ? brl(c.preco) : "Consulte o valor";
+  dlg.innerHTML = `
+    <button class="dlg-close" type="button" data-close aria-label="Fechar">×</button>
+    <div class="dlg-grid">
+      <div>
+        <div class="gal-main" id="galMain"><img id="galImg" src="${img(c.fotos[0])}" alt="${nomeCarro(c)}"><span class="ph-name">${nomeCarro(c)}</span></div>
+        <div class="thumbs">${c.fotos.map((f,i)=>`<button type="button" data-foto="${f}" aria-label="Foto ${i+1}" ${i===0?'aria-current="true"':""}><img src="${img(f)}" alt="" onerror="this.parentElement.style.display='none'"></button>`).join("")}</div>
+      </div>
+      <div class="dlg-info">
+        <h3 id="dlgTitulo">${nomeCarro(c)}</h3>
+        <div class="dlg-price">${preco}</div>
+        ${dados.length?`<dl>${dados.map(d=>`<dt>${d[0]}</dt><dd>${d[1]}</dd>`).join("")}</dl>`:'<p class="note" style="margin:14px 0 20px">Ano, quilometragem e demais dados são passados pela equipe no atendimento.</p>'}
+        ${c.destaques.length?`<ul>${c.destaques.map(d=>`<li>${d}</li>`).join("")}</ul>`:""}
+        <div class="dlg-actions">
+          <button class="btn btn-wa" type="button" data-acao="interesse">Tenho interesse neste carro</button>
+          <button class="btn" type="button" data-acao="simular">Simular financiamento</button>
+          <button class="btn" type="button" data-acao="visita">Agendar visita</button>
+        </div>
+      </div>
+    </div>`;
+  const gi = $("#galImg",dlg), gm = $("#galMain",dlg);
+  gi.addEventListener("error",()=>gm.classList.add("nophoto"));
+  dlg.onclick = ev=>{
+    const t = ev.target;
+    if(t===dlg || t.closest("[data-close]")){ dlg.close(); return; }
+    const th = t.closest("[data-foto]");
+    if(th){ gm.classList.remove("nophoto"); gi.src = img(th.dataset.foto); $$("[data-foto]",dlg).forEach(b=>b.removeAttribute("aria-current")); th.setAttribute("aria-current","true"); return; }
+    const ac = t.closest("[data-acao]"); if(!ac) return;
+    if(ac.dataset.acao==="interesse"){
+      abrirWa(`Olá! Tenho interesse no ${nomeCarro(c)}${c.ano?" "+c.ano:""}${c.preco?" ("+brl(c.preco)+")":""} que vi no site da Garagem Motors. Ainda está disponível?`);
+    } else {
+      dlg.close();
+      const alvo = ac.dataset.acao==="simular" ? "#financiamento" : "#visita";
+      const sel = ac.dataset.acao==="simular" ? sCarro : vCarro;
+      sel.value = c.id; sel.dispatchEvent(new Event("change"));
+      $(alvo).scrollIntoView({behavior:"smooth"});
+    }
+  };
+  dlg.showModal();
+}
+$("#dlgPriv").addEventListener("click",e=>{ if(e.target===e.currentTarget || e.target.closest("[data-close]")) e.currentTarget.close(); });
+$("#abrirPriv").addEventListener("click",()=>$("#dlgPriv").showModal());
+
+/* ===== Simulador (tabela Price) ===== */
+const sCarro=$("#sCarro"), sValor=$("#sValor"), sEntrada=$("#sEntrada"), sPrazo=$("#sPrazo"), sTaxa=$("#sTaxa");
+sCarro.add(new Option("Digitar o valor manualmente",""));
+CARROS.filter(c=>c.status!=="vendido").forEach(c=>sCarro.add(new Option(`${nomeCarro(c)}${c.preco?" - "+brl(c.preco):" (valor a consultar)"}`,c.id)));
+mascaraMoeda(sValor); mascaraMoeda(sEntrada);
+
+function pmt(P,i,n){ return i===0 ? P/n : P*i/(1-Math.pow(1+i,-n)); }
+function calcular(){
+  const valor = digits(sValor.value), entrada = digits(sEntrada.value);
+  const n = +sPrazo.value, taxa = +sTaxa.value;
+  $("#sTaxaTxt").textContent = taxa.toFixed(2).replace(".",",")+"% ao mês";
+  const erro = $("#oErro"), fin = valor-entrada;
+  erro.hidden = true;
+  let msg = "";
+  if(!valor) msg = "Informe o valor do veículo para ver a parcela.";
+  else if(entrada>=valor) msg = "A entrada cobre o valor do veículo, então não há o que financiar.";
+  if(msg){
+    erro.textContent = msg; erro.hidden = false;
+    $("#oParcela").textContent = "R$ 0,00"; $("#oFin").textContent = brl(Math.max(fin,0)); $("#oTotal").textContent = brl(entrada);
+    $("#oFaixa").textContent = ""; $("#oTab").innerHTML = ""; return null;
+  }
+  const i = taxa/100, parcela = pmt(fin,i,n);
+  $("#oParcela").textContent = brl(parcela);
+  $("#oFaixa").textContent = `${n}x. Entre ${brl(pmt(fin,TAXA_MIN/100,n))} (${TAXA_MIN.toFixed(1).replace(".",",")}%) e ${brl(pmt(fin,TAXA_MAX/100,n))} (${TAXA_MAX.toFixed(1).replace(".",",")}%) conforme a taxa aprovada.`;
+  $("#oFin").textContent = brl(fin);
+  $("#oTotal").textContent = brl(entrada + parcela*n);
+  $("#oTab").innerHTML = [12,24,36,48,60].map(m=>`<tr class="${m===n?"on":""}"><td>${m} meses</td><td>${brl(pmt(fin,i,m))}</td></tr>`).join("");
+  return {valor,entrada,fin,n,taxa,parcela};
+}
+sCarro.addEventListener("change",()=>{
+  const c = CARROS.find(x=>x.id===sCarro.value);
+  if(c && c.preco){ sValor.value = c.preco.toLocaleString("pt-BR"); sEntrada.value = Math.round(c.preco*0.3/1000)*1000 ? (Math.round(c.preco*0.3/1000)*1000).toLocaleString("pt-BR") : ""; }
+  else if(c){ sValor.value = ""; sEntrada.value = ""; sValor.focus(); }
+  calcular();
+});
+[sValor,sEntrada,sPrazo,sTaxa].forEach(el=>el.addEventListener("input",calcular));
+calcular();
+$("#sEnviar").addEventListener("click",()=>{
+  const r = calcular(); if(!r){ sValor.focus(); return; }
+  const c = CARROS.find(x=>x.id===sCarro.value);
+  track("simulacao_enviada");
+  abrirWa(`Olá! Fiz uma simulação de financiamento no site da Garagem Motors.\n\nVeículo: ${c?nomeCarro(c):"a definir"}\nValor: ${brl(r.valor)}\nEntrada: ${brl(r.entrada)}\nValor financiado: ${brl(r.fin)}\nPrazo: ${r.n}x de ${brl(r.parcela)} (estimativa, taxa de exemplo ${r.taxa.toFixed(2).replace(".",",")}% ao mês)\n\nGostaria de solicitar uma proposta de financiamento.`);
+});
+
+/* ===== Troca ===== */
+$("#trocaForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const v = id => $(id).value.trim();
+  track("troca_enviada");
+  abrirWa(`Olá! Meu nome é ${v("#tNome")} e quero avaliar meu carro na troca.\n\nMarca: ${v("#tMarca")}\nModelo: ${v("#tModelo")}\nVersão: ${v("#tVersao")||"não informada"}\nAno: ${v("#tAno")}\nKm: ${v("#tKm")}\n\nVou enviar as fotos por aqui.`);
+});
+
+/* ===== Visita ===== */
+const vCarro=$("#vCarro");
+CARROS.filter(c=>c.status!=="vendido").forEach(c=>vCarro.add(new Option(nomeCarro(c),c.id)));
+vCarro.add(new Option("Ainda não escolhi","")); 
+$("#vDia").min = new Date().toISOString().slice(0,10);
+$("#visitaForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const c = CARROS.find(x=>x.id===vCarro.value);
+  const [a,m,d] = $("#vDia").value.split("-");
+  track("visita_solicitada");
+  abrirWa(`Olá! Sou ${$("#vNome").value.trim()} e gostaria de agendar uma visita na Garagem Motors.\n\nVeículo: ${c?nomeCarro(c):"ainda não escolhi"}\nDia: ${d}/${m}/${a}\nHorário: ${$("#vHora").value}\n\nPode confirmar?`);
+});
+</script>
+</body>
+</html>
