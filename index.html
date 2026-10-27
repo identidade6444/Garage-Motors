@@ -68,12 +68,27 @@ h2{font-size:clamp(1.9rem,4vw,3rem);max-width:18ch}
 .btn-wa:hover{background:#3ad483;border-color:transparent}
 .btn svg{width:18px;height:18px;flex:none}
 
-/* introdução */
-#intro{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center;transition:opacity 1s ease,visibility 1s;cursor:pointer}
+/* introdução: carro de corrida cruzando a tela */
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(90% 70% at 50% 55%,#15171b,#000 75%);display:grid;place-items:center;overflow:hidden;transition:opacity 1s ease,visibility 1s;cursor:pointer}
 #intro.done{opacity:0;visibility:hidden;pointer-events:none}
-#intro::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 45% at 50% 62%,rgba(217,169,91,.18),transparent 70%);opacity:0;animation:glow 3s ease-out .4s forwards}
-.intro-logo{width:min(62vmin,460px);aspect-ratio:1;opacity:0;transform:scale(.55);filter:blur(14px);animation:logoIn 2.6s cubic-bezier(.16,.8,.24,1) .2s forwards;position:relative}
-.intro-logo::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);mix-blend-mode:overlay;transform:translateX(-120%);animation:sweep 1.6s ease-in-out 1.6s forwards;pointer-events:none}
+#intro::before{content:"";position:absolute;inset:0;background:radial-gradient(55% 40% at 50% 58%,rgba(205,211,221,.16),transparent 70%);opacity:0;animation:glow 2.4s ease-out 1s forwards}
+#intro::after{content:"";position:absolute;inset:0;background:radial-gradient(40% 30% at 50% 50%,rgba(255,255,255,.85),transparent 70%);opacity:0;animation:flash .7s ease-out 1.02s}
+.road{position:absolute;left:0;right:0;top:calc(50% + min(15vw,130px));height:2px;opacity:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 90px,transparent 90px 180px);animation:road .22s linear infinite,roadfade 1.9s ease-in-out .2s forwards;-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent)}
+.streaks i{position:absolute;left:0;top:var(--t);height:var(--h,2px);width:var(--w);border-radius:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);transform:translateX(-130%);opacity:0;animation:streak .85s cubic-bezier(.35,.1,.25,1) var(--d) forwards}
+.f1-wrap{position:absolute;left:0;top:50%;width:min(92vw,840px);margin-top:calc(min(92vw,840px) * -.17);transform:translateX(-105%);will-change:transform,filter;animation:pass 1.55s cubic-bezier(.5,.02,.3,1) .35s forwards}
+.f1-wrap::before{content:"";position:absolute;right:92%;top:34%;width:120%;height:30%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28));filter:blur(8px)}
+.f1{display:block;width:100%;height:auto;overflow:visible}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin .11s linear infinite}
+.intro-logo{width:min(58vmin,440px);aspect-ratio:1;border-radius:50%;overflow:hidden;opacity:0;transform:scale(.5);filter:blur(16px);animation:logoIn 1.5s cubic-bezier(.16,.8,.24,1) 1.02s forwards;position:relative}
+.intro-logo::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);mix-blend-mode:overlay;transform:translateX(-120%);animation:sweep 1.4s ease-in-out 2.3s forwards;pointer-events:none}
+.shock{position:absolute;left:50%;top:50%;width:min(58vmin,440px);aspect-ratio:1;margin:calc(min(58vmin,440px) / -2) 0 0 calc(min(58vmin,440px) / -2);border-radius:50%;border:2px solid rgba(255,255,255,.7);opacity:0;animation:shock 1.2s ease-out 1.05s}
+@keyframes pass{0%{transform:translateX(-105%) skewX(-4deg);filter:blur(0)}35%{filter:blur(1.5px)}80%{opacity:1}100%{transform:translateX(calc(100vw + 40px)) skewX(-12deg);filter:blur(5px);opacity:0}}
+@keyframes streak{0%{transform:translateX(-130%);opacity:0}12%{opacity:1}100%{transform:translateX(150vw);opacity:0}}
+@keyframes road{to{background-position:-180px 0}}
+@keyframes roadfade{0%{opacity:0}25%{opacity:.55}75%{opacity:.55}100%{opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes flash{0%{opacity:0}25%{opacity:.55}100%{opacity:0}}
+@keyframes shock{0%{opacity:.8;transform:scale(.6)}100%{opacity:0;transform:scale(2.4)}}
 @keyframes logoIn{to{opacity:1;transform:scale(1);filter:blur(0)}}
 @keyframes glow{to{opacity:1}}
 @keyframes sweep{to{transform:translateX(120%)}}
@@ -90,7 +105,7 @@ header.top.solid{background:rgba(251,251,253,.82);border-color:var(--line)}
 .top-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;opacity:0;transition:opacity .8s ease .2s}
 body.ready .brand{opacity:1}
-.logo-box{border-radius:22%;overflow:hidden}
+.logo-box{border-radius:50%}
 .brand .logo-box{width:46px;height:46px;box-shadow:0 4px 14px -6px rgba(0,0,0,.5)}
 .brand span{font-family:var(--display);font-weight:600;letter-spacing:.14em;font-size:.95rem}
 nav.menu{display:flex;align-items:center;gap:28px}
@@ -294,6 +309,35 @@ section>.wrap{position:relative;z-index:1}
 
 <div class="progress" id="progress" aria-hidden="true"></div>
 <div id="intro" role="presentation" aria-hidden="true">
+  <div class="road"></div>
+  <div class="streaks">
+    <i style="--t:30%;--w:70vw;--d:.30s"></i><i style="--t:36%;--w:45vw;--h:3px;--d:.42s"></i>
+    <i style="--t:43%;--w:80vw;--d:.36s"></i><i style="--t:57%;--w:60vw;--h:3px;--d:.46s"></i>
+    <i style="--t:63%;--w:75vw;--d:.34s"></i><i style="--t:69%;--w:50vw;--d:.50s"></i>
+    <i style="--t:24%;--w:40vw;--d:.55s"></i><i style="--t:74%;--w:65vw;--h:3px;--d:.40s"></i>
+  </div>
+  <div class="f1-wrap">
+    <svg class="f1" viewBox="0 0 640 170" aria-hidden="true">
+      <defs>
+        <linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555a65"/><stop offset=".5" stop-color="#1d2025"/><stop offset="1" stop-color="#0a0b0d"/></linearGradient>
+        <linearGradient id="fs" x1="0" x2="1"><stop offset="0" stop-color="#8d939d"/><stop offset=".5" stop-color="#f6f7f9"/><stop offset="1" stop-color="#8d939d"/></linearGradient>
+        <radialGradient id="rim"><stop offset="0" stop-color="#f6f7f9"/><stop offset="1" stop-color="#737984"/></radialGradient>
+      </defs>
+      <ellipse cx="330" cy="157" rx="310" ry="8" fill="#000" opacity=".6"/>
+      <path d="M40 24h14v42H40z" fill="#2b2e34"/><path d="M44 30h92l-6 13H48z" fill="url(#fb)"/><path d="M60 43h8v44h-8z" fill="#1d2025"/>
+      <path d="M522 138 L634 132 L636 142 L530 150 Z" fill="url(#fb)"/><path d="M626 120h10v30h-10z" fill="#2b2e34"/>
+      <path d="M636 130 L548 114 C520 108 492 100 462 94 L420 78 C408 72 396 68 376 66 L330 58 L270 58 L236 66 L180 74 L110 78 L76 88 L64 100 L66 124 L96 134 L562 136 Z" fill="url(#fb)" stroke="#d5dae2" stroke-opacity=".38" stroke-width="1.4"/>
+      <path d="M78 102 L526 116" stroke="url(#fs)" stroke-width="5" fill="none"/>
+      <path d="M238 66 L270 48 L318 48 L332 60 Z" fill="#111317"/>
+      <path d="M200 98 L420 106" stroke="#fff" stroke-opacity=".16" stroke-width="10" fill="none"/>
+      <path d="M392 70 C404 54 432 56 448 74" stroke="#cfd3da" stroke-width="4" fill="none"/><path d="M414 70 L418 56" stroke="#cfd3da" stroke-width="4"/>
+      <ellipse cx="420" cy="68" rx="12" ry="9" fill="#e9ebef"/>
+      <text x="236" y="127" fill="#eceef2" font-size="13" letter-spacing="3.2" font-family="Chakra Petch,sans-serif" font-weight="700">GARAGE MOTORS</text>
+      <g transform="translate(150 112)"><circle r="42" fill="#0a0a0c"/><circle r="42" fill="none" stroke="#2b2e34" stroke-width="3"/><g class="spin"><circle r="25" fill="url(#rim)"/><path d="M0-25V25M-25 0H25M-18-18L18 18M-18 18L18-18" stroke="#3a3e46" stroke-width="3"/></g><circle r="6" fill="#15171a"/></g>
+      <g transform="translate(500 118)"><circle r="36" fill="#0a0a0c"/><circle r="36" fill="none" stroke="#2b2e34" stroke-width="3"/><g class="spin"><circle r="21" fill="url(#rim)"/><path d="M0-21V21M-21 0H21M-15-15L15 15M-15 15L15-15" stroke="#3a3e46" stroke-width="3"/></g><circle r="5" fill="#15171a"/></g>
+    </svg>
+  </div>
+  <span class="shock"></span>
   <div class="intro-logo">
     <img class="logo-img" src="img/logo.png" alt="">
     <div class="logo-fallback">GARAGE<small>MOTORS</small></div>
@@ -627,7 +671,7 @@ $$(".logo-img").forEach(el=>{
   if(reduzir || visto){ el.style.display="none"; document.body.classList.add("ready"); return; }
   try{ sessionStorage.setItem("gm-intro","1"); }catch(e){}
   el.addEventListener("click", fim);
-  setTimeout(fim, 3600);
+  setTimeout(fim, 4000);
 })();
 
 /* ===== Cabeçalho, menu, parallax discreto ===== */
