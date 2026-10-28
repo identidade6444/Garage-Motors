@@ -199,7 +199,7 @@ dialog::backdrop{background:rgba(24,26,32,.5);backdrop-filter:blur(10px) saturat
 .bancos{margin-top:34px;text-align:center}
 .bancos span{display:block;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
 .bancos ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-.bancos li.has-logo{padding:11px 26px;display:grid;place-items:center}
+.bancos li.has-logo{padding:8px 26px;min-height:50px;display:grid;place-items:center}
 .bancos li img{height:24px;width:auto;display:block;filter:grayscale(1) opacity(.7);transition:filter .35s}
 @media (hover:hover){.bancos li:hover img{filter:none}}
 .bancos li{font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--chrome);padding:13px 28px;border-radius:999px;background:linear-gradient(180deg,#fff,#eceef2);border:1px solid var(--line);box-shadow:0 1px 0 #fff inset,0 6px 16px rgba(24,28,36,.06);transition:transform .35s cubic-bezier(.16,.8,.24,1),box-shadow .35s}
@@ -433,7 +433,7 @@ section>.wrap{position:relative;z-index:1}
       </div>
       <div class="bancos rv" data-parallax="0.03" data-max="20">
         <span>Financiamos com os principais bancos</span>
-        <ul><li>BV</li><li>Pan</li><li class="has-logo"><img src="img/bancos/santander.png" alt="Santander" loading="lazy"></li><li>Safra</li><li>Omni</li></ul>
+        <ul><li>BV</li><li>Pan</li><li class="has-logo"><img src="img/bancos/santander.png" alt="Santander" loading="lazy"></li><li>Safra</li><li class="has-logo"><img src="img/bancos/omni.png" alt="Omni" loading="lazy" style="height:40px"></li></ul>
       </div>
     </div>
   </section>
